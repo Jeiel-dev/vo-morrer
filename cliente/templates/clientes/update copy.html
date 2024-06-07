@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update</title>
+</head>
+<body>
+
+  <h1>{{ cliente.nome }}</h1>
+  <form action="{% url 'update' cliente.cpf %}" method="POST">
+    {% csrf_token %}
+    Nome: <input type="text" placeholder="Nome Cliente" name="nome" value="{{cliente.nome}}">
+    <br><br>
+    CPF: <input type="text" placeholder="000.000.000-00" name="cpf" maxlength="11" value="{{cliente.cpf}}">
+    <br><br>
+    CEP: <input type="text" placeholder="00000-000" name="cep" maxlength="9" value="{{cliente.cep}}">
+    <br><br>
+    Endereço: <input type="text" placeholder="Endereço" name="endereco" value="{{cliente.endereco}}">
+    <br><br>
+    data_nasc: <input type="date" name="data_nasc" value="{{cliente.data_nasc}}">
+    <br><br>
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="{% url 'home' %}">Home</a>
+
+</body>
+</html>
