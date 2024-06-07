@@ -3,8 +3,8 @@ from . import views
 from home.views import home
 
 urlpatterns = [
-    path('cadastro/', views.cadastro, name='cadastro_cli'),
-    path('salvar/', views.salvar, name='salvar'),
+    path('cadastro_cliente/', views.cadastro, name='cadastro_cli'),
+    path('salvar/', views.salvar, name='salvar_cli'),
     path('', views.home , name='home'),
     path('clientes/', views.lista_clientes , name='clientes'),
     path('editar/<str:cpf>', views.editar , name='editar'),

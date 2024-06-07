@@ -9,5 +9,6 @@ urlpatterns = [
     # url: .../home
     # path('', include('home.urls'), name='home:init'),
     path('home/', views.home, name='home'),
-    path('home/login/', views.login)
+    path('home/login/', views.login),
+    path('', views.home)
 ]

@@ -1,72 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <h1>Home</h1>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
     }
-    .container {
+
+    .conteiner-title h2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas com largura igual */
+      grid-template-columns: repeat(2, 1fr);
+      /* Cria 2 colunas com largura igual */
       gap: 50px;
       max-width: 800px;
       margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff00;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .conteiner-title a {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* Cria 2 colunas com largura igual */
+      gap: 50px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: #ffffff00;
+      border-radius: 5px;
+     
+    }
+
+    .conteiner-home {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff00;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      max-width: 400px;
+      margin: 0 10px;
       padding: 20px;
       background-color: #ffffff;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
+
+    .card-title {
+      font-weight: bold;
     }
-    .topic-container {
-      height: 100%;
-      width: 060%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-      background-color: rgba(215, 188, 188, 0.334);
-      text-align: center;
-      
+
+    .card-subtitle {
+      color: #888;
     }
-    .topic-container a {
+
+    .btn {
+      background-color: #007bff;
+      color: #ffffff;
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      border-radius: 3px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    a {
       color: #007bff;
       text-decoration: none;
-      display: block;
     }
+
+    /* Estilos adicionais para as flashcards (mantenha os estilos originais) */
   </style>
 </head>
-<body>
-  
-  <div class="container">
 
-    <div class="topic-container">
-      <a href="{% url 'clientes' %}">Clientes</a>
+<body>
+  <div class="conteiner-title">
+    <h2>Home</h2>
+    <a href="">Logout</a>
+  </div>
+  <div class="conteiner-home">
+
+
+
+
+    <div class="card card-index">
+      <div class="card-body">
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Cientes</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Visualizar a lista de Clientes cadastrados</h6>
+        <a href="{% url 'cad_cliente' %}"><button class="btn btn-block btn-warning btn-round">Ir para
+            Clientes</button></a>
+      </div>
     </div>
-    <div class="topic-container">
-      <a href="{% url 'cad_cliente' %}">Cad_cliente</a>
+
+    <div class="card card-index">
+      <div class="card-body">
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Produtos</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Visualizar lista de Produtos cadastrados</h6>
+        <a href="{% url 'produtos' %}"><button class="btn btn-block btn-warning btn-round">Ir para Produtos</button></a>
+      </div>
     </div>
-    <div class="topic-container">
-      <a href="{% url 'logout' %}">Produtos</a>
+
+    <div class="card card-index">
+      <div class="card-body">
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Cadastro de Clientes</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Cadastro de novo Cliente</h6>
+        <a href="{% url 'cad_cliente' %}"><button class="btn btn-block btn-warning btn-round">Ir para Cadastro de
+            Cliente</button></a>
+      </div>
     </div>
-    <div class="topic-container">
-      <a href="{% url 'logout' %}">Cad_produto</a>
+
+
+
+    <div class="card card-index">
+      <div class="card-body">
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Cadastro de Produtos</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Cadastro de novo Produto</h6>
+        <a href="{% url 'cad_produto' %}"><button class="btn btn-block btn-warning btn-round">Ir para Cadastro de
+            Produto</button></a>
+      </div>
     </div>
-    <div class="topic-container">
-      <a href="{% url 'logout' %}">Vendas</a>
+
+    <div class="card card-index">
+      <div class="card-body">
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Historico de Vendas</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Visualizar lista de Historico de Vendas</h6>
+        <a href="budget.jsp"><button class="btn btn-block btn-warning btn-round">Ir para Historico</button></a>
+      </div>
     </div>
-    <div class="topic-container">
-      <a href="{% url 'logout' %}">cad_venda</a>
+
+    <div class="card card-index">
+      <div class="card-body">
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Venda</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Realizar Nova Venda.</h6>
+        <a href="budget.jsp"><button class="btn btn-block btn-warning btn-round">Nova Venda</button></a>
+      </div>
     </div>
-    <div class="topic-container">
-      <a href="{% url 'logout' %}">Logout</a>
-    </div>
+    <!-- Repita para outras flashcards -->
   </div>
 </body>
+
 </html>

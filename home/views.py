@@ -17,4 +17,3 @@ def logout(request):
 def cad_cliente(request):
     return redirect('cadastro_cli')
 
-
