@@ -35,7 +35,7 @@
       padding: 10px;
       background-color: #ffffff00;
       border-radius: 5px;
-     
+
     }
 
     .conteiner-home {
@@ -94,7 +94,7 @@
 <body>
   <div class="conteiner-title">
     <h2>Home</h2>
-    <a href="">Logout</a>
+    <a href="{% url 'logout' %}">Logout</a>
   </div>
   <div class="conteiner-home">
 
@@ -105,7 +105,7 @@
       <div class="card-body">
         <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Cientes</h2>
         <h6 class="card-subtitle mb-2 text-muted">Visualizar a lista de Clientes cadastrados</h6>
-        <a href="{% url 'cad_cliente' %}"><button class="btn btn-block btn-warning btn-round">Ir para
+        <a href="{% url 'clientes' %}"><button class="btn btn-block btn-warning btn-round">Ir para
             Clientes</button></a>
       </div>
     </div>
@@ -138,22 +138,24 @@
       </div>
     </div>
 
+    <!--                    EM DESENVOLVIMENTO!!!                    -->
+
     <div class="card card-index">
       <div class="card-body">
-        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Historico de Vendas</h2>
-        <h6 class="card-subtitle mb-2 text-muted">Visualizar lista de Historico de Vendas</h6>
-        <a href="budget.jsp"><button class="btn btn-block btn-warning btn-round">Ir para Historico</button></a>
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Lista Pedido</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Realizar Nova Venda.</h6>
+        <a href="{% url 'lista_pedido' %}"><button class="btn btn-block btn-warning btn-round">Nova Venda</button></a>
       </div>
     </div>
 
     <div class="card card-index">
       <div class="card-body">
-        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Venda</h2>
-        <h6 class="card-subtitle mb-2 text-muted">Realizar Nova Venda.</h6>
-        <a href="budget.jsp"><button class="btn btn-block btn-warning btn-round">Nova Venda</button></a>
-      </div>
-    </div>
-    <!-- Repita para outras flashcards -->
+        <h2 class="card-title"><i class="fa fa-file-text" aria-hidden="true"></i> Pedido</h2>
+        <h6 class="card-subtitle mb-2 text-muted">Visualizar lista de Historico de Vendas</h6>
+        <a href="{% url 'criar_pedido' %}"><button class="btn btn-block btn-warning btn-round">Ir para
+            Historico</button></a>
+  </div>
+  </div>
   </div>
 </body>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <H1>Venda</H1>
+  <form action="{% url 'salvar' %}" method="POST">
+    {% csrf_token %}
+    <select name="produto" required id="produto">
+      <option value="">Produto</option>
+      {% for produto in produtos %}
+      <option value="{{ produto.nome }}">{{ produto.nome }}</option>
+      {% endfor %}
+    </select>
+    <input type="namber" placeholder="Qantidade" name="quantidade">
+    {{ produto.valor }}
+    <input type="namber" placeholder="{{'produto.valor'}}" name="valor">
+
+    <input type="submit" value="salvar">
+  </form>
+</body>
+
+</html>
+
+
+<!-- <select name="produto" required id="id_produto">
+  <option value="">---------</option>
+  {% for cliente in clientes %}
+      <option value="{{ cliente.cpf }}">{{ cliente.nome }}</option>
+  {% endfor %}
+</select> -->

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Estilos para o formulário */
+    form {
+      display: grid;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff00;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select, input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #ffffff;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="post" action="{% url 'criar_pedido' %}">
+    {% csrf_token %}
+
+    <label for="cliente">Cliente:</label>
+    <select name="cliente">
+      {% for cliente in clientes %}
+        <option value="{{ cliente.cpf }}">{{ cliente.nome }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="produtos">Produtos:</label>
+    <select name="produtos" multiple>
+      {% for produto in produtos %}
+        <option value="{{ produto.id }}">{{ produto.nome }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="Criar Pedido">
+  </form>
+
+  <a href="{% url 'home' %}">home</a><br>
+  <a href="{% url 'macaco' %}">Pedido list</a><br>
+</body>
+
+</html>

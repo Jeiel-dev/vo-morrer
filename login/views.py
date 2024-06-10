@@ -58,7 +58,8 @@ def login(request):
 def home(request):
     return render(request, 'home/home.html')
 
-@login_required
+
+@login_required(login_url='login/')
 def logout(request):
     auth.logout(request)
     return redirect('login')
